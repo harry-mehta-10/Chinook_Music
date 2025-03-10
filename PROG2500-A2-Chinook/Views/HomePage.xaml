@@ -1,0 +1,173 @@
+﻿<Page x:Class="PROG2500_A2_Chinook.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="930"
+      Title="Home">
+
+    <Grid>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                         From="0" To="1" Duration="0:0:0.4"/>
+                        <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                            From="0,30,0,0" To="0,0,0,0" Duration="0:0:0.4"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="Welcome to Chinook Music Store" 
+                   Style="{StaticResource PageTitleStyle}"
+                   HorizontalAlignment="Center"
+                   Margin="0,30,0,20"/>
+        
+        <!-- Dashboard tiles -->
+        <Grid Grid.Row="1" Margin="40,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Artists Tile -->
+            <Border Grid.Row="0" Grid.Column="0" 
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    MouseDown="ArtistsTile_MouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0" 
+                            Background="#2ecc71" 
+                            CornerRadius="10,10,0,0" 
+                            Padding="15">
+                        <TextBlock Text="Artists" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"/>
+                    </Border>
+                    
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <TextBlock Text="Browse all artists in the database" 
+                                   TextWrapping="Wrap" 
+                                   Margin="0,10"/>
+                        <TextBlock Text="View artist information and associated albums" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="{StaticResource LightTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <!-- Albums Tile -->
+            <Border Grid.Row="0" Grid.Column="1" 
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    MouseDown="AlbumsTile_MouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0" 
+                            Background="#e74c3c" 
+                            CornerRadius="10,10,0,0" 
+                            Padding="15">
+                        <TextBlock Text="Albums" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"/>
+                    </Border>
+                    
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <TextBlock Text="Explore all music albums" 
+                                   TextWrapping="Wrap" 
+                                   Margin="0,10"/>
+                        <TextBlock Text="View album details including artist and track listings" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="{StaticResource LightTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <!-- Tracks Tile -->
+            <Border Grid.Row="0" Grid.Column="2" 
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    MouseDown="TracksTile_MouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0" 
+                            Background="#f39c12" 
+                            CornerRadius="10,10,0,0" 
+                            Padding="15">
+                        <TextBlock Text="Tracks" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"/>
+                    </Border>
+                    
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <TextBlock Text="Browse all music tracks" 
+                                   TextWrapping="Wrap" 
+                                   Margin="0,10"/>
+                        <TextBlock Text="Access detailed information about individual songs" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="{StaticResource LightTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <!-- Welcome text -->
+            <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="About Chinook Database" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <TextBlock TextWrapping="Wrap" Margin="0,5">
+                        The Chinook database represents a digital media store, including tables for artists, albums, 
+                        media tracks, invoices and customers. This application allows you to explore the music data
+                        including artists, their albums, and individual tracks.
+                    </TextBlock>
+                    
+                    <TextBlock TextWrapping="Wrap" Margin="0,10">
+                        Use the navigation buttons on the left or the menu above to explore different sections of the database.
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

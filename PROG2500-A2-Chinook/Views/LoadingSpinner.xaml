@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="PROG2500_A2_Chinook.Views.LoadingSpinner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+        <Grid.Resources>
+            <Storyboard x:Key="SpinnerStoryboard" RepeatBehavior="Forever">
+                <DoubleAnimation Storyboard.TargetName="SpinnerRotate" 
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="360" Duration="0:0:1"/>
+            </Storyboard>
+        </Grid.Resources>
+
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource SpinnerStoryboard}"/>
+            </EventTrigger>
+        </Grid.Triggers>
+
+        <Grid Width="40" Height="40">
+            <Grid.RenderTransform>
+                <RotateTransform x:Name="SpinnerRotate" CenterX="20" CenterY="20"/>
+            </Grid.RenderTransform>
+
+            <Ellipse Width="40" Height="40" Stroke="#3498db" StrokeThickness="4" 
+                    Fill="Transparent" StrokeDashArray="1,3"/>
+        </Grid>
+
+        <TextBlock Text="Loading..." 
+                   Foreground="{StaticResource TextBrush}" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" 
+                   Margin="0,50,0,0"/>
+    </Grid>
+</UserControl>
