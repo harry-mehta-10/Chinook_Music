@@ -39,6 +39,16 @@ namespace PROG2500_A2_Chinook
             MainFrame.Navigate(new TracksPage());
         }
 
+        private void MusicCatalogMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new MusicCatalogPage());
+        }
+
+        private void CustomerOrdersMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CustomerOrdersPage());
+        }
+
         // Toolbar button click handlers
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +64,22 @@ namespace PROG2500_A2_Chinook
         {
             MainFrame.Navigate(new AlbumsPage());
         }
+
+        private void TracksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new TracksPage());
+        }
+
+        private void CatalogButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new MusicCatalogPage());
+        }
+
+        private void CustomerOrdersButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CustomerOrdersPage());
+        }
+
         public void NavigateToHome()
         {
             MainFrame.Navigate(new HomePage());
@@ -73,11 +99,15 @@ namespace PROG2500_A2_Chinook
         {
             MainFrame.Navigate(new TracksPage());
         }
-        private void TracksButton_Click(object sender, RoutedEventArgs e)
+
+        public void NavigateToMusicCatalog()
         {
-            MainFrame.Navigate(new TracksPage());
+            MainFrame.Navigate(new MusicCatalogPage());
+        }
+
+        public void NavigateToCustomerOrders()
+        {
+            MainFrame.Navigate(new CustomerOrdersPage());
         }
     }
 }
-
-

@@ -11,6 +11,8 @@
   <ItemGroup>
     <None Remove="Resources\album_icon.png" />
     <None Remove="Resources\artist_icon.png" />
+    <None Remove="Resources\catalog_icon.png" />
+    <None Remove="Resources\customer_icon.png" />
     <None Remove="Resources\home_icon.png" />
     <None Remove="Resources\tracks_icon.png" />
   </ItemGroup>
@@ -33,6 +35,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\artist_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\catalog_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\customer_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\home_icon.png">

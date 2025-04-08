@@ -20,19 +20,19 @@
                 </BeginStoryboard>
             </EventTrigger>
         </Grid.Triggers>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <!-- Header -->
         <TextBlock Grid.Row="0" 
                    Text="Welcome to Chinook Music Store" 
                    Style="{StaticResource PageTitleStyle}"
                    HorizontalAlignment="Center"
                    Margin="0,30,0,20"/>
-        
+
         <!-- Dashboard tiles -->
         <Grid Grid.Row="1" Margin="40,0">
             <Grid.RowDefinitions>
@@ -45,7 +45,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <!-- Artists Tile -->
             <Border Grid.Row="0" Grid.Column="0" 
                     Background="White" 
@@ -57,7 +57,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Border Grid.Row="0" 
                             Background="#2ecc71" 
                             CornerRadius="10,10,0,0" 
@@ -67,7 +67,7 @@
                                    FontSize="20" 
                                    FontWeight="SemiBold"/>
                     </Border>
-                    
+
                     <StackPanel Grid.Row="1" Margin="15">
                         <TextBlock Text="Browse all artists in the database" 
                                    TextWrapping="Wrap" 
@@ -78,7 +78,7 @@
                     </StackPanel>
                 </Grid>
             </Border>
-            
+
             <!-- Albums Tile -->
             <Border Grid.Row="0" Grid.Column="1" 
                     Background="White" 
@@ -90,7 +90,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Border Grid.Row="0" 
                             Background="#e74c3c" 
                             CornerRadius="10,10,0,0" 
@@ -100,7 +100,7 @@
                                    FontSize="20" 
                                    FontWeight="SemiBold"/>
                     </Border>
-                    
+
                     <StackPanel Grid.Row="1" Margin="15">
                         <TextBlock Text="Explore all music albums" 
                                    TextWrapping="Wrap" 
@@ -111,7 +111,7 @@
                     </StackPanel>
                 </Grid>
             </Border>
-            
+
             <!-- Tracks Tile -->
             <Border Grid.Row="0" Grid.Column="2" 
                     Background="White" 
@@ -123,7 +123,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Border Grid.Row="0" 
                             Background="#f39c12" 
                             CornerRadius="10,10,0,0" 
@@ -133,7 +133,7 @@
                                    FontSize="20" 
                                    FontWeight="SemiBold"/>
                     </Border>
-                    
+
                     <StackPanel Grid.Row="1" Margin="15">
                         <TextBlock Text="Browse all music tracks" 
                                    TextWrapping="Wrap" 
@@ -144,7 +144,73 @@
                     </StackPanel>
                 </Grid>
             </Border>
-            
+
+            <!-- Music Catalog Tile -->
+            <Border x:Name="CatalogTile" Grid.Row="1" Grid.Column="0" 
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    MouseDown="CatalogTile_MouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" 
+                            Background="#3498db" 
+                            CornerRadius="10,10,0,0" 
+                            Padding="15">
+                        <TextBlock Text="Music Catalog" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"/>
+                    </Border>
+
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <TextBlock Text="Browse the complete music catalog" 
+                                   TextWrapping="Wrap" 
+                                   Margin="0,10"/>
+                        <TextBlock Text="Explore artists, albums, and tracks in one view" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="{StaticResource LightTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Customer Orders Tile -->
+            <Border x:Name="CustomerOrdersTile" Grid.Row="1" Grid.Column="1" 
+                    Background="White" 
+                    Margin="15" 
+                    CornerRadius="10"
+                    MouseDown="CustomerOrdersTile_MouseDown">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" 
+                            Background="#8e44ad" 
+                            CornerRadius="10,10,0,0" 
+                            Padding="15">
+                        <TextBlock Text="Customer Orders" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold"/>
+                    </Border>
+
+                    <StackPanel Grid.Row="1" Margin="15">
+                        <TextBlock Text="View customer order details" 
+                                   TextWrapping="Wrap" 
+                                   Margin="0,10"/>
+                        <TextBlock Text="Access customer information and purchase history" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="{StaticResource LightTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
             <!-- Welcome text -->
             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                     Background="White" 
@@ -156,13 +222,13 @@
                                FontSize="18" 
                                FontWeight="SemiBold" 
                                Margin="0,0,0,10"/>
-                    
+
                     <TextBlock TextWrapping="Wrap" Margin="0,5">
                         The Chinook database represents a digital media store, including tables for artists, albums, 
                         media tracks, invoices and customers. This application allows you to explore the music data
                         including artists, their albums, and individual tracks.
                     </TextBlock>
-                    
+
                     <TextBlock TextWrapping="Wrap" Margin="0,10">
                         Use the navigation buttons on the left or the menu above to explore different sections of the database.
                     </TextBlock>

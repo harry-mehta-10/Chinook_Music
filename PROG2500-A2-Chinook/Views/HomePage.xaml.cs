@@ -27,5 +27,18 @@ namespace PROG2500_A2_Chinook.Views
             var mainWindow = App.Current.MainWindow as MainWindow;
             mainWindow?.NavigateToTracks();
         }
+
+        // Add these to HomePage.xaml.cs
+        private void CatalogTile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var mainWindow = App.Current.MainWindow as MainWindow;
+            mainWindow?.NavigateToMusicCatalog();
+        }
+
+        private void CustomerOrdersTile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var mainWindow = App.Current.MainWindow as MainWindow;
+            mainWindow?.NavigateToCustomerOrders();
+        }
     }
 }

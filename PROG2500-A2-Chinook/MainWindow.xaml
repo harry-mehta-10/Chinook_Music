@@ -39,6 +39,8 @@
                     <MenuItem Header="Artists" Click="ArtistsMenuItem_Click" Foreground="Black"/>
                     <MenuItem Header="Albums" Click="AlbumsMenuItem_Click" Foreground="Black"/>
                     <MenuItem Header="Tracks" Click="TracksMenuItem_Click" Foreground="Black"/>
+                    <MenuItem Header="Customer Orders" Click="CustomerOrdersMenuItem_Click">
+                    </MenuItem>
                 </MenuItem>
             </Menu>
         </Border>
@@ -71,6 +73,17 @@
                     <Button Style="{StaticResource ToolbarButtonStyle}" Click="TracksButton_Click" ToolTip="View Tracks">
                         <Border Width="40" Height="40" Background="#f39c12">
                             <Image Source="pack://application:,,,/Resources/tracks_icon.png" Width="20" Height="20"/>
+                        </Border>
+                    </Button>
+                    <!-- New Toolbar Buttons with consistent styling -->
+                    <Button Style="{StaticResource ToolbarButtonStyle}" Click="CatalogButton_Click" ToolTip="Music Catalog">
+                        <Border Width="40" Height="40" Background="#3498db">
+                            <Image Source="pack://application:,,,/Resources/catalog_icon.png" Width="20" Height="20"/>
+                        </Border>
+                    </Button>
+                    <Button Style="{StaticResource ToolbarButtonStyle}" Click="CustomerOrdersButton_Click" ToolTip="Customer Orders">
+                        <Border Width="40" Height="40" Background="#8e44ad">
+                            <Image Source="pack://application:,,,/Resources/customer_icon.png" Width="20" Height="20"/>
                         </Border>
                     </Button>
                 </StackPanel>

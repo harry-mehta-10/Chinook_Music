@@ -36,7 +36,7 @@ namespace PROG2500_A2_Chinook.ViewModels
                         .Include(t => t.MediaType)
                         .Include(t => t.Genre)
                         .OrderBy(t => t.Name)
-                        .Take(100) // Limit to avoid performance issues
+                        .Take(100) 
                         .ToList();
 
                     Tracks = new ObservableCollection<Track>(trackList);

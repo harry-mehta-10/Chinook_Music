@@ -30,7 +30,7 @@
         </Grid>
 
         <TextBlock Text="Loading..." 
-                   Foreground="{StaticResource TextBrush}" 
+                   Foreground="Black" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Bottom" 
                    Margin="0,50,0,0"/>
